@@ -9,7 +9,8 @@ talk_text = "{} doit faire un talk de 10 minutes la semaine prochaine"
 menage_text = "Aujourd'hui est un grand jour, c'est la lotterie du ménage ! \n\nLes grands gagnants sont :\n{}"
 
 # our members for the lottery
-atilliens = ["Flavien", "Valz", "Flo", "Antoine", "Thomas H", "Alexandre T", "Flemme"]
+with open("members.txt") as f:
+    atilliens = f.read()[:-1].split("\n")
 
 # t for talk or m for menage
 action = sys.argv[1]
@@ -34,7 +35,7 @@ else:
 
 
 data = {
-    "text": "<!everyone>\n" + t.format(",\n".join(["- " + v for v in w]))
+    "text": "<!everyone>\n" + t.format("\n".join(["- " + v for v in w]))
 }
 
 r = requests.post(hook, data = json.dumps(data))
