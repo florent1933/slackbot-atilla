@@ -20,3 +20,5 @@ Alexandre Terrien
 Alexandre Catteau
 Adel Atallah
 Martin Pozuelo
+Raphael James
+Guillaume Darroux
